@@ -1,0 +1,26 @@
+# MAGIC and PHATE installation
+
+install python3.6 from python.org
+
+git clone --recursive git://github.com/KrishnaswamyLab/PHATE.git
+cd PHATE/Python
+python3 setup.py install --user
+cd ../phateR
+R CMD INSTALL
+
+R test
+library("phateR")
+data_phate <- phate(tree.data.small$data)
+
+
+
+git clone git://github.com/KrishnaswamyLab/MAGIC.git
+cd MAGIC/python
+python3 setup.py install --user
+cd ../Rmagic
+R CMD INSTALL
+
+test
+library(Rmagic)
+data("magic_testdata")
+data_magic=magic(magic_testdata, genes = c("VIM","CDH1"))
