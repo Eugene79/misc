@@ -1,0 +1,6 @@
+# where to update proxy
+.bashrc
+/etc/environment
+.curlrc
+.condarc
+/etc/apt/apt.conf
