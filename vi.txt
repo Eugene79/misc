@@ -1,10 +1,10 @@
-———— Deletion
+———— DELETION
 
 # jump to nth/specific character
 
-To go to 25th column in a line in normal mode press 25|
+	To go to 25th column in a line in normal mode press 25|
 
-you can move forward to a particular symbol by typing 'f' followed by the symbol in question
+	you can move forward to a particular symbol by typing 'f' followed by the symbol in question
 
 # delete to next space
 
@@ -16,7 +16,7 @@ d E
 
 d2f<space> will delete up to two spaces
 
-———— Indentation
+———— INDENTATION
 
 # (un)indent 5 lines
 5>>(<<)
@@ -27,3 +27,24 @@ d2f<space> will delete up to two spaces
 =i{ reindents "inner block" (inside the braces).
 =a{ reindents "a block" (including the braces).
 =2a{ reindents 2 blocks (this block and containing block).
+
+REPLACE
+	:%s/old/new/g	Replace all occurences of old by new in file
+	:%s/onward/forward/gi	Replace onward by forward, case unsensitive
+	:%s/old/new/gc	Replace all occurences with confirmation
+	:%s/^/hello/g	Replace the begining of each line by hello
+	:%s/$/Harry/g	Replace the end of each line by Harry
+	:%s/onward/forward/gi	Replace onward by forward, case unsensitive
+	:%s/ *$//g	Delete all white spaces
+	:g/string/d	Delete all lines containing string
+	:v/string/d	Delete all lines containing which didn’t contain string
+	:s/Bill/Steve/	Replace the first occurence of Bill by Steve in current line
+	:s/Bill/Steve/g	Replace Bill by Steve in current line
+	:%s/Bill/Steve/g	Replace Bill by Steve in all the file
+	:%s/^M//g	Delete DOS carriage returns (^M)
+	:%s/\r/\r/g	Transform DOS carriage returns in returns
+	:%s#<[^>]\+>##g	Delete HTML tags but keeps text
+	:%s/^\(.*\)\n\1$/\1/	Delete lines which appears twice
+	Ctrl+a	Increment number under the cursor
+	Ctrl+x	Decrement number under cursor
+	ggVGg?	Change text to Rot13
