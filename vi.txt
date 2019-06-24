@@ -1,0 +1,29 @@
+———— Deletion
+
+# jump to nth/specific character
+
+To go to 25th column in a line in normal mode press 25|
+
+you can move forward to a particular symbol by typing 'f' followed by the symbol in question
+
+# delete to next space
+
+d t space
+
+d W (5dw deletes next 5 words)
+
+d E
+
+d2f<space> will delete up to two spaces
+
+———— Indentation
+
+# (un)indent 5 lines
+5>>(<<)
+
+#ndent inner {} block
+>i} 
+
+=i{ reindents "inner block" (inside the braces).
+=a{ reindents "a block" (including the braces).
+=2a{ reindents 2 blocks (this block and containing block).
