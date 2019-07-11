@@ -56,6 +56,12 @@ rename 's/([^[]+et\_al\.\_)([^.]+)(.pdf)/$2_$1$3/' *.pdf
 # copy as backup previously opened file
 cp !$ !#:1.back
 
+# merged multiple files (take first column only once, keep 2nd columns)
+for file in ./*.counts; do awk 'NR==1 { print "genes\t",FILENAME }; 1' "$file" > "$file".temp; done
+paste *.temp > all_counts.txt
+cut -f 1,2,4,6,8,10,12,14,16,18,20,22,24 all_counts.txt > all_counts_selected.txt
+
+
 
 ### for loops
 
