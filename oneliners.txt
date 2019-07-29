@@ -61,7 +61,9 @@ for file in ./*.counts; do awk 'NR==1 { print "genes\t",FILENAME }; 1' "$file" >
 paste *.temp > all_counts.txt
 cut -f 1,2,4,6,8,10,12,14,16,18,20,22,24 all_counts.txt > all_counts_selected.txt
 
+### changing word in last command in bash
 
+!!:gs/WORD1/WORD2
 
 ### for loops
 
