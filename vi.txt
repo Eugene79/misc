@@ -48,3 +48,16 @@ REPLACE
 	Ctrl+a	Increment number under the cursor
 	Ctrl+x	Decrement number under cursor
 	ggVGg?	Change text to Rot13
+	
+	
+	
+Use Ctrl+x followed by Ctrl+e to open the current line in the editor specified by $FCEDIT or $EDITOR or emacs (tried in that order).
+
+If you ran the command earlier, hit Ctrl+r for a reverse history search and type option25 (in this case). The line will be displayed. Hit Tab to start editing at this point.
+
+Use history expansion with the s/// modifier. E.g. !-2:s/--option25/--newoption/ would rerun the second-to-last command, but replace option25. To modify the last ./cmd command, use the !string syntax: !./cmd:s/--option25/--newoption/
+Any delimiter may be used in place of / in the substitution.
+
+If editing the previous line, you can use quick substitution: ^--option25^--newoption. Or ^--option25^--newoption^:& for global replacement.
+
+Character search. This was mentioned by Pax, and can be done in regular emacs-mode with Ctrl+] for forward search, and Ctrl+Alt+] for backward search.
